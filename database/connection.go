@@ -11,7 +11,7 @@ import (
 var DB *gorm.DB
 
 func Connect() {
-	dsn := "host=" + os.Getenv("DBHOST") + "user=" + os.Getenv("DBUSER") + " password=" + os.Getenv("DBPASS") + " dbname=" + os.Getenv("DBNAME") + " port=5432 sslmode=disable TimeZone=Asia/Shanghai"
+	dsn := "host=" + os.Getenv("DBHOST") + " user=" + os.Getenv("DBUSER") + " password=" + os.Getenv("DBPASS") + " dbname=" + os.Getenv("DBNAME") + " port=5432 sslmode=disable TimeZone=Asia/Shanghai"
 	// dsn := "root:" + os.Getenv("DBPASS") + "@tcp(127.0.0.1:3306)/" + os.Getenv("DBNAME") + "?charset=utf8mb4&parseTime=True&loc=Local"
 
 	connection, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
