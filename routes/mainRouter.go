@@ -35,10 +35,10 @@ func MatchOrders(db *gorm.DB) error {
 
 	// Match orders (price-time priority)
 	for _, buyOrder := range buyOrders {
-		fmt.Println("TRYING2")
-		fmt.Println(buyOrder)
+		// fmt.Println("TRYING2")
+		// fmt.Println(buyOrder)
 		for _, sellOrder := range sellOrders {
-			fmt.Println(sellOrder)
+			// fmt.Println(sellOrder)
 			// If the buy price is higher than or equal to the sell price, a match occurs
 			if buyOrder.Price >= sellOrder.Price && buyOrder.UserId != sellOrder.UserId {
 				// Calculate the matched amount (smallest amount between buy and sell order)
@@ -74,7 +74,7 @@ func MatchOrders(db *gorm.DB) error {
 		}
 	}
 
-	fmt.Println("JUST FINISHED LOL")
+	// fmt.Println("JUST FINISHED LOL")
 
 	return nil
 }
